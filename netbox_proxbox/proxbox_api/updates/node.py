@@ -106,6 +106,7 @@ def interfaces(proxmox, netbox_node, proxmox_json):
     _lag_port = ['OVSBond']
     _brg_port = ['OVSBridge']
     _pmx_iface = []
+    logging.info(f'[OK] -> nb.dcim.interfaces.filter(device_id=netbox_node.id)')
     _ntb_iface = [{'name': iface.name, 'mtu' : int(iface.mtu) if iface.mtu else 1500, 'tagged_vlans': [int(x['vid']) for x in iface.tagged_vlans]} for iface in nb.dcim.interfaces.filter(device_id=netbox_node.id)]
     _eth =  [iface for iface in proxmox.nodes(proxmox_json['name']).network.get() if iface['type'] == 'eth']
     _virt = [iface for iface in proxmox.nodes(proxmox_json['name']).network.get() if iface['type'] in _int_port]
