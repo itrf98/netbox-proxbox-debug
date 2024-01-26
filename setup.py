@@ -12,9 +12,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 '''
 
-version = "0.0.1"
-github = 'https://github.com/itrf98/netbox-proxbox-debug.git'
-name = "netbox-proxbox-ivan"
+version = "0.0.5"
+github = 'https://github.com/netdevopsbr/netbox-proxbox'
+name = "netbox-proxbox"
 python_min_version = "3.10"
 
 # Proxbox dependencies
